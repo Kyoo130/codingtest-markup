@@ -55,8 +55,8 @@
 
 #carousel .carousel-cont .carousel-list {
     position: relative;
-    width: 464px;
-    height: 464px;
+    width: 348px;
+    height: 348px;
     transform-style: preserve-3d;
     /* transform: rotateX(-75deg) */
 }
