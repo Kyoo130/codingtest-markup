@@ -74,7 +74,7 @@
     transition: all 0.5s;
 }
 
-#carousel .carousel-cont .carousel-list .carousel-item:first-child {
+/* #carousel .carousel-cont .carousel-list .carousel-item:first-child {
     transform: rotateY(0deg) translateZ(250px);
 }
 
@@ -84,7 +84,7 @@
 
 #carousel .carousel-cont .carousel-list .carousel-item:nth-child(3) {
     transform: rotateY(240deg) translateZ(250px) rotateY(-240deg)
-}
+} */
 
 #carousel .carousel-cont .carousel-list .carousel-item img {
     display: block;
