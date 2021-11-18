@@ -44,7 +44,7 @@ body {
     max-width: 386px;
     height: 180px;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100%;
     background-image: url('../images/Logo_img.png');
 }
 
@@ -182,7 +182,7 @@ body {
 
 .cont-get .list-item-staged {
     height: 106px;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     padding: 12px;
     border: 1px solid #BDBDBD;
     box-sizing: border-box;
