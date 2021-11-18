@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* 유틸리티 */
+/* 스크린 리더 전용 */
+
+.sr-only-바꿀거 {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px; /* 0px 설정 시 스크린리더가 읽을 수 없는 문제 발생 우려 */
+    height: 1px; /* 0px 설정 시 스크린리더가 읽을 수 없는 문제 발생 우려 */
+    overflow: hidden;
+}
+
