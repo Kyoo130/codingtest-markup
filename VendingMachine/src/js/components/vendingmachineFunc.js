@@ -16,16 +16,16 @@ class VendingmachineFunc {
     this.bindEvents();
   }
   stagedItemGenerator(target) {
-      const stagedItem = document.createElement('li');
-      stagedItem.dataset.item = target.dataset.item;
-      stagedItem.dataset.price = target.dataset.price;
+    const stagedItem = document.createElement("li");
+    stagedItem.dataset.item = target.dataset.item;
+    stagedItem.dataset.price = target.dataset.price;
 
-      stagedItem.innerHTML = `
+    stagedItem.innerHTML = `
       <img src="./src/images/${target.dataset.img}" alt="" class="img-item">
       <strong class="txt-item">${target.dataset.item}</strong>
       <span class="num-counter">1</span>
       `;
-      this.stagedList.appendChild(stagedItem);
+    this.stagedList.appendChild(stagedItem);
   }
 
   bindEvents() {
@@ -65,22 +65,63 @@ class VendingmachineFunc {
       const targetElBtn = targetEl.querySelector(".btn-item");
       let isStaged = false;
 
-      if (targetEl.tagName == "LI") {
+      if (targetEl.tagName === "LI") {
         const targetElPrice = parseInt(targetElBtn.dataset.price);
         if (balanceVal >= targetElPrice) {
-          this.balance.innerText = new Intl.NumberFormat().format(balanceVal - targetElPrice) + " 원";
+          this.balance.innerText =
+            new Intl.NumberFormat().format(balanceVal - targetElPrice) + " 원";
 
-          if(this.stagedList.querySelectorAll('li').length > 0) {
-            // this.stagedList.querySelectorAll('li').forEach((item) => {
-            //     if(item.dataset)
-            // })
-          } else {
+          if (this.stagedList.querySelectorAll("li").length > 0) {
+            this.stagedList.querySelectorAll("li").forEach((item) => {
+              if (item.dataset.item === targetElBtn.dataset.item) {
+                item.querySelector(".num-counter").innerText++;
+                isStaged = true;
+                return;
+              }
+            });
+            if (!isStaged) {
               this.stagedItemGenerator(targetElBtn);
+            }
+          } else {
+            this.stagedItemGenerator(targetElBtn);
+          }
+          targetElBtn.dataset.count--;
+          if (targetElBtn.dataset.count == 0) {
+            targetEl.classList.add("sold-out");
           }
         } else {
           alert("잔액이 부족합니다.");
         }
       }
+    });
+
+    this.btnGet.addEventListener("click", () => {
+      let totalPrice = 0;
+      let isGot = false;
+      this.stagedList.querySelectorAll("li").forEach((itemStaged) => {
+        this.gotList.querySelectorAll("li").forEach((itemGot) => {
+          let itemGotCount = itemGot.querySelector(".num-counter");
+          if (itemStaged.dataset.item === itemGot.dataset.item) {
+            itemGotCount.innerText =
+              parseInt(itemGotCount.innerText) +
+              parseInt(itemStaged.querySelector(".num-counter").innerText);
+            this.stagedList.removeChild(itemStaged);
+            isGot = true;
+            return;
+          }
+        });
+        if (!isGot) {
+          this.gotList.appendChild(itemStaged);
+        }
+      });
+      this.gotList.querySelectorAll("li").forEach((itemGot) => {
+        totalPrice +=
+          itemGot.dataset.price *
+          parseInt(itemGot.querySelector(".num-counter").innerText);
+      });
+      this.txtTotal.innerText = `총금액 : ${new Intl.NumberFormat().format(
+        totalPrice
+      )}원`;
     });
   }
 }
