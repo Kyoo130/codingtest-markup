@@ -29,7 +29,8 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-#app .vending-machine, #app .my-info {
+#app .vending-machine,
+#app .my-info {
     width: 360px;
     background-color: #fff;
     box-sizing: border-box;
@@ -47,6 +48,10 @@ body {
 }
 
 /* 자판기 아이템 리스트 */
+#app .vending-machine {
+    padding: 31px 27px 28px;
+}
+
 .vending-machine .list-item {
     display: flex;
     flex-wrap: wrap;
@@ -128,19 +133,25 @@ body {
 
 
 /* 잔액 반환, 입급, 획득 스타일 */
-.vending-machine .cont-return, .vending-machine .cont-put, .vending-machine .cont-get {
+.vending-machine .cont-return,
+.vending-machine .cont-put,
+.vending-machine .cont-get {
     display: flex;
     justify-content: space-between;
     margin-top: 12px;
 }
 
-.cont-return .info-balance, .cont-put .inp-put, .cont-get .list-item-staged {
+.cont-return .info-balance,
+.cont-put .inp-put,
+.cont-get .list-item-staged {
     width: 65%;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-.cont-return .btn-return, .cont-put .btn-put, .cont-get .btn-get {
+.cont-return .btn-return,
+.cont-put .btn-put,
+.cont-get .btn-get {
     width: 30%;
     font-size: 13px;
     border-radius: 5px;
@@ -149,4 +160,75 @@ body {
 
 .vending-machine .cont-return {
     margin-top: 20px;
+}
+
+/* float 확인해보자  */
+.cont-return .info-balance {
+    overflow: hidden;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #EAE8FE;
+}
+
+.info-balance .txt-balance {
+    float: right;
+}
+
+.cont-put .inp-put {
+    padding: 6px 6px 7px;
+    border: 1px solid #BDBDBD;
+}
+
+.cont-get .list-item-staged {
+    height: 106px;
+    overflow-y: scroll;
+    padding: 12px;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    background-color: #EAE8FE;
+}
+
+.cont-get .btn-get {
+    font-weight: 700;
+    background-color: #6327FE;
+    color: #fff;
+}
+
+.list-item-staged li {
+    overflow: hidden;
+    padding: 6px 8px 7px 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.list-item-staged li+li {
+    margin-top: 6px;
+}
+
+.list-item-staged .img-item, .list-item-staged .txt-item {
+    float: left;
+}
+
+.list-item-staged .img-item {
+    width: 18px;
+    height: 33px;
+}
+
+.list-item-staged .txt-item {
+    margin-left: 10px;
+    font-size: 9px;
+    line-height: 33px;
+}
+
+.list-item-staged .num-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
