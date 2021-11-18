@@ -1,14 +1,92 @@
 @charset "utf-8";
 
 /* 유틸리티 */
-/* 스크린 리더 전용 */
-
-.sr-only-바꿀거 {
-    position: absolute;
-    left: -10000px;
-    top: auto;
-    width: 1px; /* 0px 설정 시 스크린리더가 읽을 수 없는 문제 발생 우려 */
-    height: 1px; /* 0px 설정 시 스크린리더가 읽을 수 없는 문제 발생 우려 */
+.ir {
+    display: block;
     overflow: hidden;
+    position: absolute;
+    text-indent: -9999px;
+    line-height: 0;
+    font-size: 1px;
+    color: transparent;
 }
 
+.img-item {
+    display: block;
+}
+
+/* 레이아웃 */
+body {
+    background-color: #EAE8FE;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0 28px;
+    padding-top: 247px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#app .vending-machine, #app .my-info {
+    width: 360px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* 타이틀 스타일링 */
+#app .tit-app {
+    top: 0px;
+    width: 100%;
+    max-width: 386px;
+    height: 180px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url('../images/Logo_img.png');
+}
+
+/* 자판기 아이템 리스트 */
+.vending-machine .list-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.vending-machine .list-item li {
+    position: relative;
+    width: 30%;
+    height: 130px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.vending-machine .list-item li:active::before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 3px solid #6327FE;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.vending-machine .list-item li.sold-out::before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 58px 45px;
+    background-image: url('../images/Sold-out.png');
+    background-color: rgba(0, 0, 0, 0.8);
+}
