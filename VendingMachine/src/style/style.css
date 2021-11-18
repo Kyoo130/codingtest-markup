@@ -90,3 +90,63 @@ body {
     background-image: url('../images/Sold-out.png');
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+.vending-machine .list-item li.sold-out {
+    pointer-events: none;
+}
+
+.vending-machine .list-item li:nth-child(3)~li {
+    margin-top: 12px;
+}
+
+.vending-machine .btn-item {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.vending-machine .list-item .img-item {
+    width: 36px;
+    height: 65px;
+    margin: 0 auto;
+}
+
+.vending-machine .tit-item {
+    display: block;
+    font-size: 9px;
+    margin: 6px 0 7px;
+}
+
+.vending-machine .txt-price {
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 16px;
+    background: #6327FE;
+    border-radius: 50px;
+    color: #fff;
+}
+
+
+/* 잔액 반환, 입급, 획득 스타일 */
+.vending-machine .cont-return, .vending-machine .cont-put, .vending-machine .cont-get {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.cont-return .info-balance, .cont-put .inp-put, .cont-get .list-item-staged {
+    width: 65%;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.cont-return .btn-return, .cont-put .btn-put, .cont-get .btn-get {
+    width: 30%;
+    font-size: 13px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.vending-machine .cont-return {
+    margin-top: 20px;
+}
