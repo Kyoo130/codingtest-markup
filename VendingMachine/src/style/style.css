@@ -274,7 +274,7 @@ body {
 }
 
 .cont-myitems .list-item-staged {
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     height: 364px;
     padding: 12px;
     background-color: #EAE8FE;
