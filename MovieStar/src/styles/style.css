@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+#app {
+    position: absolute;
+    top: 271px;
+    left: 260px;
+    width: 608px;
+    height: 500px;
+    /* margin: 197px auto 0; */
+    /* margin: auto; */
+    background-color: #333333;
+    color: #fff;
+    border-radius: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.cont-movie {
+    position: relative;
+    top: 64px;
+    left: 266px;
+
+}
+
+.movie-info dd {
+    font-weight: 500;
+    color: #bdbdbd;
+}
+
+.movie-info .movie-tit {
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+}
+
+
+.movie-img {
+    position: relative;
+    top: 0px;
+    left: -64px;
+    width: 281px;
+    border-radius: 10px;
+}
