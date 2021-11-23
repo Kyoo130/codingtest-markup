@@ -90,7 +90,7 @@ class VendingmachineFunc {
             targetEl.classList.add("sold-out");
           }
         } else {
-          alert("잔액이 부족합니다.");
+          alert("잔액이 부족합니다. 소지금을 입금 후 선택해 주세요.");
         }
       }
     });
