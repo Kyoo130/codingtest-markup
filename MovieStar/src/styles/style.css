@@ -25,16 +25,16 @@
 .cont-movie .movie-info {
     color: #bdbdbd;
     width: 100%;
-    overflow: hidden;
 }
 
-.cont-movie .movie-info dd:nth-child(2) {
+.cont-movie .movie-info dd {
     float: left;
+    line-height: 23px;
 }
 
 .cont-movie .movie-info dd:nth-child(2)::after {
     content: '\2758';
-    margin: 5px;
+    margin: 9px;
 }
 
 .cont-movie .movie-info .info-tit {
@@ -43,6 +43,7 @@
     line-height: 46px;
     font-size: 32px;
     font-weight: 700;
+    clear: both;
 }
 
 
@@ -71,8 +72,8 @@
 
 
 .cont-item .item-btn {
-    overflow: hidden;
     margin-left: 4px;
+    overflow: hidden;
 }
 
 .cont-item .item-btn li {
@@ -86,38 +87,41 @@
     height: 60px;
     font-size: 1px;
     text-indent: -9999px;
+    box-sizing: border-box;
     border: 2px solid #FFFFFF;
     border-radius: 100%;
     overflow: hidden;
 }
 
 .cont-item .item-btn .btn-like {
-    background: no-repeat center / 24px url("../images/아이콘_thumbs-up.png"), #2F80ED;
+    background: no-repeat center / 24px url("../images/아이콘_thumbs-up.png");
 }
 
 .cont-item .item-btn .btn-heart {
-    background: no-repeat center / 24px url("../images/아이콘_heart.png"), pink;
+    background: no-repeat 17px 19px / 24px url("../images/아이콘_heart2.png");
 }
 
 .cont-item .item-avg {
     display: block;
     margin-top: 22px;
     margin-left: 4px;
+    line-height: 23px
 }
 
 .cont-item .item-stars {
-    margin-top: 16px;
+    margin-top: 14px;
 }
 
 .cont-item .item-stars img {
     width: 52px;
+    margin-right: -6px;
 }
 
 .cont-item .item-stars .cancle-btn {
     display: inline-block;
     width: 18px;
     height: 18px;
-    margin-left: 12px;
+    margin-left: 13px;
     margin-bottom: 17px;
     font-size: 1px;
     text-indent: -9999px;
