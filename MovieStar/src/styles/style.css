@@ -11,36 +11,42 @@
     color: #fff;
     border-radius: 15px;
     font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
 }
 
+
+/* 영화 소개 */
 .cont-movie {
     position: absolute;
-    padding-left: 266px;
-    padding-top: 64px;
+    top: 64px;
+    left: 266px;
 }
 
-.movie-info dd {
-    font-weight: 500;
+.cont-movie .movie-info {
     color: #bdbdbd;
+    width: 100%;
+    overflow: hidden;
 }
 
-.movie-info dd:nth-child(2) {
+.cont-movie .movie-info dd:nth-child(2) {
     float: left;
 }
 
-.movie-info dd:nth-child(2)::after {
+.cont-movie .movie-info dd:nth-child(2)::after {
     content: '\2758';
     margin: 5px;
 }
 
-.movie-info .info-tit {
-    display: inline-block;
-    font-weight: 700;
-    font-size: 32px;
-    color: #fff;
+.cont-movie .movie-info .info-tit {
     margin-top: 13px;
+    color: #fff;
+    line-height: 46px;
+    font-size: 32px;
+    font-weight: 700;
 }
 
+
+/* 영화 이미지 */
 .cont-img {
     position: absolute;
     top: 52px;
@@ -55,24 +61,27 @@
     border-radius: 10px;
 }
 
+
+/* 별점 */
 .cont-item {
     position: absolute;
-    padding-left: 266px;
-    padding-top: 260px;
+    top: 260px;
+    left: 262px;
 }
 
+
+.cont-item .item-btn {
+    overflow: hidden;
+    margin-left: 4px;
+}
 
 .cont-item .item-btn li {
     float: left;
     margin-right: 20px;
 }
 
-.cont-item .item-btn {
-    display: inline-block;
-}
-
 .cont-item .item-btn a {
-    display: block;
+    display: inline-block;
     width: 60px;
     height: 60px;
     font-size: 1px;
@@ -93,7 +102,7 @@
 .cont-item .item-avg {
     display: block;
     margin-top: 22px;
-
+    margin-left: 4px;
 }
 
 .cont-item .item-stars {
